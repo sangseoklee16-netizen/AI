@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>강아지 소개</title>
+<style>
+  :root {
+    --bg: #fff8f0;
+    --card: #ffffff;
+    --accent: #e8824a;
+    --accent-dark: #c9632f;
+    --text: #3a2e28;
+    --muted: #7a6a60;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', 'Apple SD Gothic Neo', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  header {
+    text-align: center;
+    padding: 64px 20px 48px;
+    background: linear-gradient(135deg, #ffe4c4, #ffd1a9);
+  }
+  header .emoji { font-size: 72px; }
+  header h1 {
+    font-size: 2.4rem;
+    margin: 12px 0 8px;
+  }
+  header p {
+    color: var(--muted);
+    font-size: 1.1rem;
+    margin: 0;
+  }
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+  }
+  section {
+    margin-bottom: 56px;
+  }
+  section h2 {
+    font-size: 1.5rem;
+    border-left: 6px solid var(--accent);
+    padding-left: 12px;
+    margin-bottom: 20px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    text-align: center;
+  }
+  .card .icon { font-size: 40px; margin-bottom: 12px; }
+  .card h3 { margin: 0 0 8px; font-size: 1.1rem; }
+  .card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+  .breed-list { list-style: none; padding: 0; margin: 0; }
+  .breed-list li {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .breed-list .name { font-weight: 600; }
+  .breed-list .desc { color: var(--muted); font-size: 0.9rem; }
+  .tips {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  }
+  .tips ol { margin: 0; padding-left: 20px; }
+  .tips li { margin-bottom: 10px; }
+  footer {
+    text-align: center;
+    padding: 24px;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="emoji">🐶</div>
+  <h1>강아지 소개</h1>
+  <p>사람과 가장 오래 함께해 온 동물, 강아지에 대해 알아보아요</p>
+</header>
+
+<main>
+
+  <section>
+    <h2>강아지의 특징</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="icon">👃</div>
+        <h3>뛰어난 후각</h3>
+        <p>사람보다 수만 배 뛰어난 후각으로 냄새를 맡고 상황을 판단해요.</p>
+      </div>
+      <div class="card">
+        <div class="icon">❤️</div>
+        <h3>강한 유대감</h3>
+        <p>주인과 깊은 애착 관계를 형성하며 감정을 함께 나눠요.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🏃</div>
+        <h3>활동적인 성격</h3>
+        <p>산책과 놀이를 좋아하며 꾸준한 운동이 필요해요.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🧠</div>
+        <h3>높은 학습 능력</h3>
+        <p>반복 훈련을 통해 다양한 명령과 행동을 배울 수 있어요.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>인기 있는 강아지 종</h2>
+    <ul class="breed-list">
+      <li>
+        <span class="name">🐕 골든 리트리버</span>
+        <span class="desc">온순하고 사람을 좋아하는 대형견</span>
+      </li>
+      <li>
+        <span class="name">🐩 푸들</span>
+        <span class="desc">똑똑하고 털 관리가 용이한 품종</span>
+      </li>
+      <li>
+        <span class="name">🐶 비숑 프리제</span>
+        <span class="desc">애교 많고 알레르기가 적은 소형견</span>
+      </li>
+      <li>
+        <span class="name">🦴 진돗개</span>
+        <span class="desc">충성심이 강한 한국 토종 품종</span>
+      </li>
+      <li>
+        <span class="name">🐾 말티즈</span>
+        <span class="desc">작고 활발하며 실내 생활에 적합</span>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>강아지를 돌보는 기본 팁</h2>
+    <div class="tips">
+      <ol>
+        <li>매일 일정한 시간에 산책을 시켜 운동량을 채워주세요.</li>
+        <li>나이와 체중에 맞는 사료로 균형 잡힌 식단을 유지하세요.</li>
+        <li>정기적인 예방접종과 건강검진을 챙겨주세요.</li>
+        <li>털 관리와 목욕을 통해 피부와 위생을 관리해주세요.</li>
+        <li>충분한 애정과 놀이 시간으로 정서적 안정을 주세요.</li>
+      </ol>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  🐾 강아지와 함께하는 행복한 하루
+</footer>
+
+</body>
+</html>
