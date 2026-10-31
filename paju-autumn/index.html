@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>파주 단풍 나들이</title>
+<meta name="description" content="장인·장모님과 함께하는 파주 단풍 하루 코스 — 벽초지수목원, 보리굴비 점심, 마장호수">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf6f0;
+    --paper: #ffffff;
+    --ink: #2b2420;
+    --muted: #6f625a;
+    --line: #e7ddd2;
+    --maple: #b8432b;
+    --amber: #d98b2b;
+    --pine: #3f5e4a;
+    --chip: #f4ebe1;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1c1816; --paper: #26201d; --ink: #f2eae3; --muted: #b9aba0;
+      --line: #3a322d; --maple: #e0694f; --amber: #e8a34c; --pine: #8fb79b; --chip: #312925;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1c1816; --paper: #26201d; --ink: #f2eae3; --muted: #b9aba0;
+    --line: #3a322d; --maple: #e0694f; --amber: #e8a34c; --pine: #8fb79b; --chip: #312925;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Noto Sans KR", system-ui, sans-serif;
+    font-size: 18px; line-height: 1.75;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+
+  header { padding: 56px 0 32px; border-bottom: 1px solid var(--line); }
+  .kicker { color: var(--maple); font-weight: 700; letter-spacing: .08em; font-size: 15px; }
+  h1 { font-family: "Gowun Batang", serif; font-size: clamp(34px, 7vw, 50px); line-height: 1.25; margin: 8px 0 14px; }
+  .lead { color: var(--muted); margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .chip { background: var(--chip); border-radius: 999px; padding: 4px 14px; font-size: 15px; }
+
+  section { padding: 36px 0; border-bottom: 1px solid var(--line); }
+  h2 { font-family: "Gowun Batang", serif; font-size: 26px; margin: 0 0 18px; }
+
+  .timeline { list-style: none; margin: 0; padding: 0; position: relative; }
+  .timeline::before {
+    content: ""; position: absolute; left: 21px; top: 8px; bottom: 8px;
+    width: 2px; background: linear-gradient(var(--maple), var(--amber), var(--pine));
+  }
+  .stop { position: relative; padding-left: 64px; margin-bottom: 28px; }
+  .stop:last-child { margin-bottom: 0; }
+  .dot {
+    position: absolute; left: 0; top: 2px; width: 44px; height: 44px; border-radius: 50%;
+    background: var(--paper); border: 2px solid var(--maple);
+    display: grid; place-items: center; font-weight: 700; color: var(--maple); font-size: 16px;
+  }
+  .stop:nth-child(2) .dot { border-color: var(--amber); color: var(--amber); }
+  .stop:nth-child(3) .dot { border-color: var(--pine); color: var(--pine); }
+  .card { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; }
+  .time { font-weight: 700; color: var(--muted); font-size: 15px; }
+  h3 { margin: 2px 0 8px; font-size: 21px; }
+  .card p { margin: 0 0 10px; }
+  .facts { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; font-size: 16px; color: var(--muted); margin: 12px 0 0; }
+  .facts dt { font-weight: 700; color: var(--ink); }
+  .facts dd { margin: 0; }
+  .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .btn {
+    display: inline-block; text-decoration: none; font-size: 15px; font-weight: 500;
+    padding: 8px 14px; border-radius: 10px; border: 1px solid var(--line); color: var(--ink); background: var(--chip);
+  }
+  .btn.primary { background: var(--maple); border-color: var(--maple); color: #fff; }
+
+  .alts { display: grid; gap: 12px; }
+  .alt { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; }
+  .alt b { display: block; }
+  .alt span { color: var(--muted); font-size: 16px; }
+
+  ul.tips { margin: 0; padding-left: 20px; }
+  ul.tips li { margin-bottom: 8px; }
+
+  footer { padding: 28px 0 48px; color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">2026 가을 · 파주 광탄면</div>
+  <h1>장인·장모님과 함께하는<br>파주 단풍 나들이</h1>
+  <p class="lead">오래 걷지 않고, 차로 10분 안팎에서 움직이는 평일 하루 코스입니다.</p>
+  <div class="meta">
+    <span class="chip">🗓 다음 주 평일 (화~수 추천)</span>
+    <span class="chip">🚗 자가용</span>
+    <span class="chip">⏱ 10:00 ~ 15:30</span>
+  </div>
+</header>
+
+<section>
+  <h2>하루 일정</h2>
+  <ol class="timeline">
+    <li class="stop">
+      <div class="dot">1</div>
+      <div class="card">
+        <div class="time">오전 10:00 · 약 1시간 30분</div>
+        <h3>벽초지수목원</h3>
+        <p>평지 위주의 정원이라 어르신 걸음에도 무리가 없습니다. 연못이 있는 동양식 정원과 유럽식 정원을 천천히 둘러보시고, 안쪽 찻집에서 쉬어 가세요.</p>
+        <dl class="facts">
+          <dt>주소</dt><dd>파주시 광탄면 부흥로 242</dd>
+          <dt>운영</dt><dd>09:00 ~ 18:00</dd>
+          <dt>전화</dt><dd>031-957-2004</dd>
+          <dt>팁</dt><dd>입구에서 안내 지도를 받아 동선을 짧게 잡으세요.</dd>
+        </dl>
+        <div class="actions">
+          <a class="btn primary" href="https://map.naver.com/p/search/벽초지수목원" target="_blank" rel="noopener">네이버 지도</a>
+          <a class="btn" href="tel:0319572004">전화하기</a>
+        </div>
+      </div>
+    </li>
+
+    <li class="stop">
+      <div class="dot">2</div>
+      <div class="card">
+        <div class="time">낮 12:00 · 점심</div>
+        <h3>농가 — 보리굴비 정식</h3>
+        <p>수목원에서 차로 약 5분. 메뉴가 보리굴비 정식 하나인 오래된 집으로, 직원분이 가시를 발라 주시고 녹차 물에 말아 드시는 방식이라 어르신들께 잘 맞습니다.</p>
+        <dl class="facts">
+          <dt>주소</dt><dd>파주시 광탄면 방축리 204-1</dd>
+          <dt>운영</dt><dd>10:30 ~ 20:00 · 일요일 휴무</dd>
+          <dt>가격</dt><dd>1인 2만 5천 ~ 3만 원 선</dd>
+          <dt>예약</dt><dd>방문 전 전화 예약 권장</dd>
+        </dl>
+        <div class="actions">
+          <a class="btn primary" href="tel:0319582772">예약 전화 031-958-2772</a>
+          <a class="btn" href="https://map.naver.com/p/search/파주 농가 보리굴비" target="_blank" rel="noopener">네이버 지도</a>
+        </div>
+      </div>
+    </li>
+
+    <li class="stop">
+      <div class="dot">3</div>
+      <div class="card">
+        <div class="time">오후 2:00 · 약 1시간 ~ 1시간 30분</div>
+        <h3>마장호수</h3>
+        <p>출렁다리까지는 오르막이 조금 있으니, 컨디션에 따라 호숫가 평탄한 데크길만 짧게 걸으시고 전망 카페에서 단풍 든 호수를 보며 차 한잔으로 마무리하세요.</p>
+        <dl class="facts">
+          <dt>주소</dt><dd>파주시 광탄면 기산리 481-1</dd>
+          <dt>운영</dt><dd>09:00 ~ 18:00</dd>
+          <dt>주차</dt><dd>2주차장이 출렁다리·카페와 가장 가까움</dd>
+        </dl>
+        <div class="actions">
+          <a class="btn primary" href="https://map.naver.com/p/search/마장호수 제2주차장" target="_blank" rel="noopener">네이버 지도</a>
+        </div>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<section>
+  <h2>점심 대안</h2>
+  <div class="alts">
+    <div class="alt">
+      <b>소령원 장단콩 두부마을</b>
+      <span>마장호수 가는 길목 · 직접 만든 두부 전골 · 부드러운 음식을 원하실 때 · 031-957-6202</span>
+    </div>
+    <div class="alt">
+      <b>사임당 한정식 (탄현면)</b>
+      <span>저염 한정식, 식후 2층 셀프 카페 · 동선에서 약 20분 · 031-942-8822</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>챙겨 두실 것</h2>
+  <ul class="tips">
+    <li>11월 첫 주가 지나면 단풍이 빠르게 지니, 다음 주 초중반이 가장 좋습니다.</li>
+    <li>점심은 전날까지 전화 예약해 두시면 기다림 없이 드실 수 있습니다.</li>
+    <li>오후엔 호숫가 바람이 차니 어르신들 겉옷과 무릎 담요를 챙겨 주세요.</li>
+    <li>편한 운동화, 마실 물, 상비약을 준비하시면 좋습니다.</li>
+  </ul>
+</section>
+
+<footer>
+  운영 시간과 가격은 변동될 수 있으니 출발 전 한 번 더 확인해 주세요.
+</footer>
+
+</div>
+</body>
+</html>
