@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>반계리 은행나무 나들이</title>
+<meta name="description" content="11월 5일(목) 가족 셋이 함께하는 원주 반계리 은행나무 하루 코스">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbf7ec;
+    --paper: #ffffff;
+    --ink: #2a2618;
+    --muted: #6b6450;
+    --line: #ebe2c9;
+    --gold: #c99a06;
+    --gold-deep: #9a7404;
+    --leaf: #5a7a3a;
+    --stone: #6a6f78;
+    --chip: #f5edd3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1b1a14; --paper: #25231b; --ink: #f3eedd; --muted: #b8b09a;
+      --line: #3a3628; --gold: #e8bb2e; --gold-deep: #e8bb2e; --leaf: #9cc177; --stone: #aab0ba; --chip: #312d20;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1b1a14; --paper: #25231b; --ink: #f3eedd; --muted: #b8b09a;
+    --line: #3a3628; --gold: #e8bb2e; --gold-deep: #e8bb2e; --leaf: #9cc177; --stone: #aab0ba; --chip: #312d20;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Noto Sans KR", system-ui, sans-serif;
+    font-size: 18px; line-height: 1.75;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+
+  header { padding: 56px 0 32px; border-bottom: 1px solid var(--line); }
+  .kicker { color: var(--gold-deep); font-weight: 700; letter-spacing: .08em; font-size: 15px; }
+  h1 { font-family: "Gowun Batang", serif; font-size: clamp(34px, 7vw, 50px); line-height: 1.25; margin: 8px 0 14px; }
+  .lead { color: var(--muted); margin: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .chip { background: var(--chip); border-radius: 999px; padding: 4px 14px; font-size: 15px; }
+
+  .note {
+    margin-top: 20px; background: var(--paper); border: 1px solid var(--line);
+    border-left: 4px solid var(--gold); border-radius: 10px; padding: 12px 16px; font-size: 16px;
+  }
+
+  section { padding: 36px 0; border-bottom: 1px solid var(--line); }
+  h2 { font-family: "Gowun Batang", serif; font-size: 26px; margin: 0 0 18px; }
+
+  .timeline { list-style: none; margin: 0; padding: 0; position: relative; }
+  .timeline::before {
+    content: ""; position: absolute; left: 21px; top: 8px; bottom: 8px;
+    width: 2px; background: linear-gradient(var(--stone), var(--gold), var(--leaf), var(--stone));
+  }
+  .stop { position: relative; padding-left: 64px; margin-bottom: 24px; }
+  .stop:last-child { margin-bottom: 0; }
+  .dot {
+    position: absolute; left: 0; top: 2px; width: 44px; height: 44px; border-radius: 50%;
+    background: var(--paper); border: 2px solid var(--gold);
+    display: grid; place-items: center; font-weight: 700; color: var(--gold-deep); font-size: 15px;
+  }
+  .stop.road .dot { border-color: var(--stone); color: var(--stone); font-size: 18px; }
+  .stop.road .card { background: transparent; border-style: dashed; }
+  .card { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; }
+  .time { font-weight: 700; color: var(--muted); font-size: 15px; }
+  h3 { margin: 2px 0 8px; font-size: 21px; }
+  .card p { margin: 0 0 10px; }
+  .card p:last-child { margin-bottom: 0; }
+  .facts { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; font-size: 16px; color: var(--muted); margin: 12px 0 0; }
+  .facts dt { font-weight: 700; color: var(--ink); }
+  .facts dd { margin: 0; }
+  .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .btn {
+    display: inline-block; text-decoration: none; font-size: 15px; font-weight: 500;
+    padding: 8px 14px; border-radius: 10px; border: 1px solid var(--line); color: var(--ink); background: var(--chip);
+  }
+  .btn.primary { background: var(--gold-deep); border-color: var(--gold-deep); color: #fff; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn.primary { color: #1b1a14; } }
+  :root[data-theme="dark"] .btn.primary { color: #1b1a14; }
+
+  .alts { display: grid; gap: 12px; }
+  .alt { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; }
+  .alt b { display: block; }
+  .alt span { color: var(--muted); font-size: 16px; }
+  .alt a { color: var(--gold-deep); }
+
+  ul.tips { margin: 0; padding-left: 20px; }
+  ul.tips li { margin-bottom: 8px; }
+
+  footer { padding: 28px 0 48px; color: var(--muted); font-size: 14px; }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">2026 가을 · 강원 원주 문막</div>
+  <h1>천년 은행나무 보러<br>원주 반계리 나들이</h1>
+  <p class="lead">구리 집에서 아침에 출발해 노란 은행나무, 따뜻한 청국장 점심, 뮤지엄 산 산책까지 즐기는 가족 셋의 하루 코스입니다.</p>
+  <div class="meta">
+    <span class="chip">🗓 11월 5일 (목)</span>
+    <span class="chip">🚗 자가용</span>
+    <span class="chip">⏱ 08:30 ~ 17:40</span>
+    <span class="chip">☀️ 맑음 · 8~12°C</span>
+  </div>
+  <div class="note">11월 1일 기준 은행잎이 한창 물드는 중이고, 절정은 11월 초로 예상됩니다. 금요일부터 기온이 떨어져 주말엔 영하권이라, 목요일이 좋은 시기입니다.</div>
+</header>
+
+<section>
+  <h2>하루 일정</h2>
+  <ol class="timeline">
+    <li class="stop road">
+      <div class="dot">🚗</div>
+      <div class="card">
+        <div class="time">오전 8:30 · 약 1시간 20분</div>
+        <h3>구리 집 출발</h3>
+        <p>중부고속도로 → 광주원주고속도로 경유. 출근길 정체가 있으면 조금 더 걸릴 수 있어요.</p>
+      </div>
+    </li>
+
+    <li class="stop">
+      <div class="dot">1</div>
+      <div class="card">
+        <div class="time">오전 10:00 ~ 11:20</div>
+        <h3>반계리 은행나무</h3>
+        <p>높이 약 32m, 수령 약 1,300년으로 추정되는 천연기념물 제167호입니다. 사람이 적은 10시대에 가족사진부터 찍고, 나무를 한 바퀴 돌며 구경하세요. 은행나무 축제(10/26~11/8) 부스는 11시부터 엽니다.</p>
+        <dl class="facts">
+          <dt>주소</dt><dd>원주시 문막읍 반계리 1495-1</dd>
+          <dt>관람</dt><dd>무료</dd>
+          <dt>주차</dt><dd>“반계리 은행나무 주차장”으로 검색 · 약 135면이라 일찍 도착 권장</dd>
+          <dt>문의</dt><dd>원주 관광안내소 033-742-2111</dd>
+        </dl>
+        <div class="actions">
+          <a class="btn primary" href="https://map.naver.com/p/search/반계리 은행나무 주차장" target="_blank" rel="noopener">네이버 지도</a>
+          <a class="btn" href="tel:0337422111">관광안내소 전화</a>
+        </div>
+      </div>
+    </li>
+
+    <li class="stop">
+      <div class="dot">2</div>
+      <div class="card">
+        <div class="time">오전 11:40 ~ 12:50 · 점심</div>
+        <h3>정순화황토방청국장</h3>
+        <p>은행나무에서 차로 약 10분. 간이 세지 않은 청국장과 보쌈 정식이 대표 메뉴이고, 주차장이 넓습니다. 신발을 벗고 들어가는 황토방 식당입니다. 12시 전에 들어가면 기다리지 않아요.</p>
+        <dl class="facts">
+          <dt>주소</dt><dd>원주시 문막읍 원문로 1508-17</dd>
+          <dt>영업</dt><dd>07:00 ~ 22:00</dd>
+          <dt>전화</dt><dd>033-735-5388</dd>
+        </dl>
+        <div class="actions">
+          <a class="btn primary" href="https://map.naver.com/p/search/정순화황토방청국장" target="_blank" rel="noopener">네이버 지도</a>
+          <a class="btn" href="tel:0337355388">전화하기</a>
+        </div>
+      </div>
+    </li>
+
+    <li class="stop">
+      <div class="dot">3</div>
+      <div class="card">
+        <div class="time">오후 1:30 ~ 3:30</div>
+        <h3>뮤지엄 산</h3>
+        <p>점심 장소에서 차로 약 30분. 안도 다다오가 설계한 미술관으로, 단풍 든 산자락 속 물의 정원과 돌의 정원을 천천히 걷기 좋습니다. 개인 방문은 예약 없이 현장에서 표를 살 수 있어요.</p>
+        <dl class="facts">
+          <dt>주소</dt><dd>원주시 지정면 오크밸리2길 260</dd>
+          <dt>운영</dt><dd>10:00 ~ 18:00 (매표 17:00 마감) · 월요일 휴관</dd>
+          <dt>요금</dt><dd>기본 패스 23,000원 · 제임스 터렐 포함 패스 39,000원부터</dd>
+        </dl>
+        <div class="actions">
+          <a class="btn primary" href="https://map.naver.com/p/search/뮤지엄산" target="_blank" rel="noopener">네이버 지도</a>
+        </div>
+      </div>
+    </li>
+
+    <li class="stop road">
+      <div class="dot">🏠</div>
+      <div class="card">
+        <div class="time">오후 4:00 · 약 1시간 20분</div>
+        <h3>구리 집으로</h3>
+        <p>17:20 ~ 17:40 도착 예정입니다.</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<section>
+  <h2>점심 대안</h2>
+  <div class="alts">
+    <div class="alt">
+      <b>소복소복</b>
+      <span>장어·새우튀김 소바로 이름난 집 · 차로 약 10분 · 11:00~15:00 · 점심 대기가 길 수 있음 · <a href="tel:0337464444">033-746-4444</a></span>
+    </div>
+    <div class="alt">
+      <b>문막기사식당</b>
+      <span>은행나무 바로 옆 · 불맛 두루치기 백반, 저렴하고 셀프 서비스 · 09:00~20:00 (일 휴무) · <a href="tel:0337345580">033-734-5580</a></span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>오후 대안: 소금산 그랜드밸리</h2>
+  <div class="alt">
+    <b>출렁다리 · 하늘정원 · 케이블카</b>
+    <span>좀 더 활동적인 코스를 원할 때 · 11월 운영 09:00~17:00, 월 휴장 · 케이블카 코스 18,000원(약 1시간 30분), 트레킹 코스 10,000원(약 2시간 30분, 계단 많음) · 무료 주차(P4) · 14시 전 도착 권장</span>
+  </div>
+</section>
+
+<section>
+  <h2>챙겨 갈 것</h2>
+  <ul class="tips">
+    <li>겉옷과 목도리 — 낮 최고 12°C, 아침은 더 쌀쌀합니다.</li>
+    <li>편한 신발 — 은행나무 아래엔 열매가 떨어져 있어요.</li>
+    <li>물과 간단한 간식, 상비약</li>
+    <li>휴대폰 충전기 — 사진을 많이 찍게 됩니다.</li>
+  </ul>
+</section>
+
+<footer>
+  운영 시간과 가격은 바뀔 수 있으니 출발 전 한 번 더 확인해 주세요. 참고:
+  <a href="https://www.news1.kr/local/kangwon/6339078" target="_blank" rel="noopener">뉴스1</a> ·
+  <a href="https://www.make2t.kr/2026/10/bangyeri-ginkgo-tree-parking-festival.html" target="_blank" rel="noopener">축제·주차 안내</a> ·
+  <a href="https://www.ktriptips.com/kor/culture/2633832" target="_blank" rel="noopener">뮤지엄 산</a> ·
+  <a href="https://travelmapjourney.com/wonju-sogeumsan-suspension-bridge-guide/" target="_blank" rel="noopener">소금산</a>
+</footer>
+
+</div>
+</body>
+</html>
